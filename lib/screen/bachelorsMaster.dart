@@ -4,6 +4,7 @@ import 'package:finder/screen/bachelorDetail.dart';
 import 'package:finder/provider/bachelorsProvider.dart';
 import 'package:finder/provider/bachelorsLikedProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 
 class BachelorsMaster extends StatefulWidget {
   const BachelorsMaster({super.key, required this.title});
@@ -32,6 +33,15 @@ class _BachelorsMasterState extends State<BachelorsMaster> {
             style: const TextStyle(
               color: Colors.white,
             )),
+        leading: GestureDetector(
+          onTap: () {
+            context.go("/liked");
+          },
+          child: const Icon(
+            Icons.favorite,
+            color: Colors.red,
+          ),
+        ),
       ),
       body: ListView.builder(
         itemCount: bachelors.length,

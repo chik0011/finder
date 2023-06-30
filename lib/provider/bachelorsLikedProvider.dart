@@ -15,6 +15,17 @@ class BachelorsLikedProvider extends ChangeNotifier {
     }
   }
 
+  void deleteBachelorLiked(Bachelor bachelor) {
+    int index = 0;
+    getBachelorsLiked().forEach((element) {
+      if (bachelor == element) {
+        bachelorsLiked.removeAt(index);
+      }
+
+      index++;
+    });
+  }
+
   bool isLiked(Bachelor bachelor) {
     return bachelorsLiked.contains(bachelor);
   }

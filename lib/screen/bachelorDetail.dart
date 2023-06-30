@@ -89,6 +89,8 @@ class _BachelorsDetailState extends State<BachelorsDetail> {
           if (_liked) {
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
             bachelorsLikedProvider.addBachelorLiked(widget.bachelor);
+          } else {
+            bachelorsLikedProvider.deleteBachelorLiked(widget.bachelor);
           }
         },
         tooltip: 'Like',
